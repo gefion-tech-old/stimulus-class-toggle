@@ -46,14 +46,16 @@ class ClassToggleController extends Stimulus.Controller {
     }
 }
 
-let application;
+(function() {
+    let application;
 
-if (window.stimulusApplication) {
-    application = window.stimulusApplication
-} else {
-    application = Stimulus.Application.start()
-}
+    if (window.stimulusApplication) {
+        application = window.stimulusApplication
+    } else {
+        application = Stimulus.Application.start()
+    }
 
-application.register('class-toggle', ClassToggleController)
+    application.register('class-toggle', ClassToggleController)
 
-window.stimulusApplication = application
+    window.stimulusApplication = application
+})()
